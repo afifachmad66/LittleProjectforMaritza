@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>A Little Project for Maritza</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- Background -->
+    <div class="stars"></div>
+
+    <!-- ========================= -->
+    <!-- Opening -->
+    <!-- ========================= -->
+
+    <section id="opening" class="screen active">
+
+        <div class="content">
+                <h1> 🌸 </h1>
+            <h2>A Little Gift</h2>
+            <h2>For Maritza </h2>
+
+            <p>
+                Ada sesuatu yang ingin aku tunjukkan
+            </p>
+
+            <button id="startBtn">
+                Ready?
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- Verify Popup -->
+    <!-- ========================= -->
+
+<div id="verifyPopup" class="popup hidden">
+
+    <div class="popup-card">
+
+                <h2>🌸🌸🌸🌸</h2>
+
+           <h2>Apakah benar ini</h2>
+
+        <h2>Maritza Angela Kurnia Raharjo,<br>S.Tr.Mpkt?</h2>
+
+        <div class="popup-buttons">
+
+            <button id="yesBtn">
+                💗 Ya, ini aku
+            </button>
+
+            <button id="noBtn" class="secondary">
+                🤍 Bukan
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ========================= -->
+<!-- Confirm Popup -->
+<!-- ========================= -->
+
+<div id="confirmPopup" class="popup hidden">
+
+    <div class="popup-card">
+
+        <p id="confirmText">
+            Yakin kamu bukan Maritza?
+        </p>
+
+        <div class="popup-buttons">
+
+            <button id="maritzaBtn">
+                💖 Iya, aku Maritza
+            </button>
+            
+            <button id="backBtn" class="secondary">
+               🤍 bukan
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+    <!-- ========================= -->
+    <!-- Intro -->
+    <!-- ========================= -->
+
+    <section id="introScreen" class="screen hidden">
+
+        <div class="content">
+
+            <h1>✨</h1>
+
+            <p>
+
+                Ini ada hadiah kecil.
+
+                <br><br>
+
+                Mungkin sangat sederhana.
+
+                <br>
+
+                Tapi aku membuatnya
+
+                dengan sepenuh hati.
+
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- Story -->
+    <!-- ========================= -->
+
+    <section id="storyScreen" class="screen hidden">
+
+        <div class="story-box">
+
+            <h1 id="storyText">
+
+                Every picture has a story.
+
+            </h1>
+
+        </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- Gallery -->
+    <!-- ========================= -->
+
+    <section id="gallery" class="screen hidden">
+
+        <img id="galleryImage" src="" alt="Gallery">
+
+        <div id="photoCounter">
+
+            1 / 40
+
+        </div>
+
+        <div class="galleryTitle">
+
+            OUR SHORT MEMORIES
+
+        </div>
+
+    </section>
+        <!-- ========================= -->
+    <!-- Video Screen -->
+    <!-- ========================= -->
+
+    <section id="videoScreen" class="screen hidden">
+
+<video
+    id="memoryVideo"
+    controls
+    autoplay
+    playsinline
+    preload="none">
+</video>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- Bouquet -->
+    <!-- ========================= -->
+
+<!-- =========================
+     BOUQUET SCREEN
+========================= -->
+
+<section id="bouquetScreen" class="screen hidden">
+
+    <!-- Cahaya -->
+    <div class="bouquet-glow"></div>
+
+    <!-- Sparkle -->
+    <div id="sparkleContainer"></div>
+
+    <!-- Kelopak -->
+    <div id="petalContainer"></div>
+
+    <!-- Bouquet -->
+    <div class="bouquet-wrapper">
+
+        <img
+            id="bouquet"
+            src="asset/bouquet1.png"
+            alt="Bouquet">
+
+        <div class="tag">
+            For Maritza 💗
+        </div>
+
+    </div>
+
+    <div class="touchBox">
+
+        <h2>Sentuh Buket Ini 🌸</h2>
+
+        <p>
+            Sebuah surat kecil telah menunggumu
+        </p>
+
+    </div>
+
+</section>
+
+    <!-- ========================= -->
+    <!-- Letter -->
+    <!-- ========================= -->
+
+    <section id="letterScreen" class="screen hidden">
+
+        <div class="letter">
+
+            <h2>For Maritza</h2>
+
+            <div id="letterContent">
+
+                <!-- Diisi oleh JavaScript -->
+
+            </div>
+
+            <button id="finishBtn">
+
+                Continue
+
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- Ending -->
+    <!-- ========================= -->
+
+    <section id="endingScreen" class="screen hidden">
+
+        <div class="content">
+
+            <h1>
+
+                Terimakasih ya sudah meluangkan waktu menonton sampe akhir. Semoga suka dengan apa yang aku bikin ini buat kamu 😊
+
+            <p>
+
+                <br><br>
+
+                
+
+            </p>
+
+            <h3>
+
+                Create With Love,
+
+                <br>
+
+                Afif ❤️
+
+            </h3>
+
+            <button id="replayBtn">
+
+                Back to beginning?
+
+            </button>
+
+        </div>
+
+    </section>
+
+<audio id="bgMusic" loop preload="auto">
+    <source src="music/music.mp3" type="audio/mpeg">
+</audio>
+
+<script src="script.js"></script>
+</body>
+</html>

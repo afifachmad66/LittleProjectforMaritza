@@ -1,0 +1,1054 @@
+/*======================================================
+  PROJECT MARITZA v1.0 STABLE
+  Created by : Afif
+======================================================*/
+
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+html,body{
+
+    width:100%;
+    height:100%;
+    overflow:hidden;
+
+}
+
+body{
+
+    background:#050816;
+    color:#ffffff;
+
+}
+
+/* =========================
+   BACKGROUND
+========================= */
+
+.stars{
+
+    position:fixed;
+
+    inset:0;
+
+    background-image:
+    radial-gradient(white 1px,transparent 1px),
+    radial-gradient(#ffd6e7 1px,transparent 1px);
+
+    background-size:
+    80px 80px,
+    140px 140px;
+
+    opacity:.35;
+
+    animation:starsMove 12s linear infinite;
+
+    z-index:-1;
+
+}
+
+@keyframes starsMove{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-20px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* =========================
+   GLOBAL SCREEN
+========================= */
+
+.screen{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:30px;
+
+    background:transparent;
+
+}
+
+.hidden{
+
+    display:none !important;
+
+}
+
+.content{
+
+    width:100%;
+
+    max-width:650px;
+
+}
+
+/* =========================
+   TYPOGRAPHY
+========================= */
+
+h1{
+
+    font-size:46px;
+
+    font-weight:300;
+
+    color:#ffd6e7;
+
+    margin-bottom:20px;
+
+}
+
+h2{
+
+    font-size:30px;
+
+    font-weight:300;
+
+    margin-bottom:20px;
+
+}
+
+h3{
+
+    font-size:22px;
+
+    font-weight:300;
+
+    margin-top:35px;
+
+    color:#ffd6e7;
+
+}
+
+p{
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    color:#dddddd;
+
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+button{
+
+    margin-top:35px;
+
+    padding:15px 40px;
+
+    border:none;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    background:#ff69b4;
+
+    color:white;
+
+    font-size:18px;
+
+    transition:.30s;
+
+}
+
+button:hover{
+
+    transform:scale(1.05);
+
+    background:#ff4fa3;
+
+}
+
+.secondary{
+
+    background:rgba(255,255,255,.12);
+
+    border:1px solid rgba(255,255,255,.2);
+
+}
+
+.secondary:hover{
+
+    background:rgba(255,255,255,.20);
+
+}
+
+/* =========================
+   POPUP
+========================= */
+
+.popup{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(0,0,0,.65);
+
+    backdrop-filter:blur(8px);
+
+    z-index:9999;
+
+}
+
+.popup-card{
+
+    width:90%;
+
+    max-width:420px;
+
+    padding:35px;
+
+    border-radius:25px;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    box-shadow:0 0 40px rgba(255,105,180,.25);
+
+    animation:popupShow .5s ease;
+
+}
+
+.popup-buttons{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+    margin-top:25px;
+
+}
+
+@keyframes popupShow{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(35px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+/* =========================
+   INTRO
+========================= */
+
+#introScreen{
+
+    background:#050816;
+
+    opacity:1;
+
+    transition:opacity 1s ease;
+
+}
+
+#introScreen .content{
+
+    animation:introFade 1.2s ease;
+
+}
+
+@keyframes introFade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(25px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* =========================
+   STORY
+========================= */
+
+#storyScreen{
+
+    background:#050816;
+
+}
+
+.story-box{
+
+    max-width:700px;
+
+}
+
+#storyText{
+
+    font-size:42px;
+
+    font-weight:300;
+
+    line-height:1.6;
+
+    letter-spacing:2px;
+
+    color:white;
+
+    opacity:0;
+
+    transition:opacity 1.2s ease,
+               transform 1.2s ease;
+
+    transform:translateY(20px);
+
+}
+
+#storyText.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+/* =========================
+   GALLERY
+========================= */
+
+#gallery{
+
+    background:#050816;
+
+    overflow:hidden;
+
+}
+
+#galleryImage{
+
+    max-width:90%;
+
+    max-height:90%;
+
+    object-fit:contain;
+
+    opacity:0;
+
+    transform:scale(1);
+
+    transition:
+        opacity .8s ease,
+        transform 6s linear;
+
+}
+
+#galleryImage.show{
+
+    opacity:1;
+
+    transform:scale(1.05);
+
+}
+
+/* =========================
+   PHOTO COUNTER
+========================= */
+
+#photoCounter{
+
+    position:absolute;
+
+    left:30px;
+
+    bottom:25px;
+
+    color:rgba(255,255,255,.75);
+
+    font-size:17px;
+
+    letter-spacing:2px;
+
+}
+
+/* =========================
+   GALLERY TITLE
+========================= */
+
+.galleryTitle{
+
+    position:absolute;
+
+    right:30px;
+
+    bottom:25px;
+
+    color:rgba(255,255,255,.45);
+
+    font-size:16px;
+
+    letter-spacing:5px;
+
+    text-transform:uppercase;
+
+}
+
+/* =========================
+   FADE EFFECT
+========================= */
+
+.fadeOut{
+
+    opacity:0 !important;
+
+}
+
+.fadeIn{
+
+    opacity:1 !important;
+
+}
+
+/* =========================
+   SCREEN ANIMATION
+========================= */
+
+.screenFadeIn{
+
+    animation:screenFadeIn .8s ease;
+
+}
+
+@keyframes screenFadeIn{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+/* =========================
+   VIDEO SCREEN
+========================= */
+
+#videoScreen{
+
+    background:#000;
+
+    overflow:hidden;
+
+}
+
+#memoryVideo{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:contain;
+
+    background:#000;
+
+}
+
+/* =========================
+   BOUQUET
+========================= */
+/* ==========================================
+   BOUQUET SCREEN
+========================================== */
+
+#bouquetScreen{
+    position:fixed;
+    inset:0;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+
+    overflow:hidden;
+
+    background:
+    radial-gradient(circle at top,#2d1647,#050816);
+
+    z-index:100;
+}
+
+/* ==========================================
+   WRAPPER
+========================================== */
+
+.bouquet-wrapper{
+
+    position:relative;
+
+    width:100%;
+    height:70vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+}
+
+/* ==========================================
+   BOUQUET
+========================================== */
+
+#bouquet{
+
+    height:100%;
+    width:auto;
+    max-width:90vw;
+    object-fit:contain;
+
+    user-select:none;
+    cursor:pointer;
+
+    z-index:5;
+
+    will-change:transform;
+
+    animation:softFloat 6s ease-in-out infinite;
+
+    transition:.4s;
+
+}
+
+#bouquet:hover{
+    filter:drop-shadow(0 0 25px rgba(255,182,193,0.7));
+}
+
+#bouquet:active{
+
+    transform:scale(0.98);
+
+}
+
+/* ==========================================
+   GLOW
+========================================== */
+
+.bouquet-glow{
+
+    position:absolute;
+
+    width:450px;
+    height:450px;
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(circle,
+
+    rgba(255,120,200,.45),
+
+    rgba(255,170,220,.18),
+
+    transparent 75%);
+
+    filter:blur(45px);
+
+    animation:glowPulse 3s infinite;
+
+}
+
+/* ==========================================
+   TAG
+========================================== */
+
+.tag{
+
+    position:absolute;
+
+    bottom:12%;
+
+    background:rgba(255,255,255,.15);
+
+    backdrop-filter:blur(10px);
+
+    padding:8px 18px;
+
+    border-radius:30px;
+
+    color:white;
+
+    font-size:17px;
+
+    letter-spacing:1px;
+
+    animation:tagSwing 4s ease-in-out infinite;
+
+}
+
+/* ==========================================
+   TEXT
+========================================== */
+
+.touchBox{
+
+    text-align:center;
+
+    margin-top:15px;
+
+    z-index:20;
+
+}
+
+.touchBox h2{
+
+    color:white;
+
+    font-size:28px;
+
+    margin-bottom:8px;
+
+    animation:textBlink 2s infinite;
+
+}
+
+.touchBox p{
+
+    color:#ffd6ef;
+
+    font-size:15px;
+
+}
+
+/* ==========================================
+   SPARKLE
+========================================== */
+
+#sparkleContainer{
+
+    position:absolute;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+}
+
+.sparkle{
+
+    position:absolute;
+
+    width:6px;
+    height:6px;
+
+    border-radius:50%;
+
+    background:white;
+
+    box-shadow:
+
+    0 0 10px white,
+
+    0 0 20px pink;
+
+    animation:
+
+    sparkleMove 5s linear infinite;
+
+}
+
+/* ==========================================
+   PETAL
+========================================== */
+
+#petalContainer{
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+}
+
+.petal{
+    position:absolute;
+    width:22px;
+    height:22px;
+
+    pointer-events:none;
+    user-select:none;
+    z-index:999;
+
+    will-change:transform, opacity;
+}
+
+/* ==========================================
+   ANIMATION
+========================================== */
+
+@keyframes softFloat{
+
+0%,100%{
+
+transform:translateY(0) rotate(-1.5deg) scale(1);
+
+}
+
+50%{
+
+transform:translateY(-12px) rotate(1.5deg) scale(1.025);
+
+}
+
+}
+
+@keyframes glowPulse{
+
+0%,100%{
+
+opacity:.55;
+
+transform:scale(.9);
+
+}
+
+50%{
+
+opacity:1;
+
+transform:scale(1.15);
+
+}
+
+}
+
+@keyframes tagSwing{
+
+0%,100%{
+
+transform:rotate(-2deg);
+
+}
+
+50%{
+
+transform:rotate(2deg);
+
+}
+
+}
+
+@keyframes textBlink{
+
+0%,100%{
+
+opacity:1;
+
+}
+
+50%{
+
+opacity:.45;
+
+}
+
+}
+
+@keyframes sparkleMove{
+
+0%{
+
+opacity:0;
+
+transform:
+
+translateY(30px)
+
+scale(.5);
+
+}
+
+25%{
+
+opacity:1;
+
+}
+
+75%{
+
+opacity:1;
+
+}
+
+100%{
+
+opacity:0;
+
+transform:
+
+translateY(-160px)
+
+scale(1.3);
+
+}
+
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:480px){
+
+#bouquet{
+
+max-width:92vw;
+
+}
+
+.touchBox h2{
+
+font-size:24px;
+
+}
+
+.touchBox p{
+
+font-size:14px;
+
+}
+
+.tag{
+
+font-size:15px;
+
+padding:7px 16px;
+
+}
+
+}
+
+/* =========================
+   LETTER
+========================= */
+
+#letterScreen{
+
+    background:#050816;
+
+    padding:25px;
+
+}
+
+.letter{
+
+    width:100%;
+
+    max-width:700px;
+
+    padding:35px;
+
+    border-radius:25px;
+
+    background:rgba(255,255,255,.07);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    box-shadow:0 0 30px rgba(255,255,255,.08);
+
+}
+
+#letterContent{
+
+    margin-top:25px;
+
+    min-height:220px;
+
+    text-align:left;
+
+    white-space:pre-line;
+
+    line-height:2;
+
+    color:#f0f0f0;
+
+}
+
+/* =========================
+   ENDING
+========================= */
+
+#endingScreen{
+
+    background:linear-gradient(180deg,#050816,#111827);
+
+}
+
+#endingScreen h1{
+
+    color:#ffd6e7;
+
+    margin-bottom:20px;
+
+}
+
+#endingScreen h3{
+
+    margin-top:40px;
+
+    color:#ffd6e7;
+
+    font-weight:300;
+
+}
+
+/* =========================
+   UTILITIES
+========================= */
+
+.fade{
+
+    animation:fade .8s ease;
+
+}
+
+@keyframes fade{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+.hidden{
+
+    display:none !important;
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+    h1{
+
+        font-size:36px;
+
+    }
+
+    h2{
+
+        font-size:26px;
+
+    }
+
+    p{
+
+        font-size:17px;
+
+    }
+
+    button{
+
+        width:100%;
+
+        max-width:280px;
+
+    }
+
+    #galleryImage{
+
+        max-width:94%;
+
+        max-height:82%;
+
+    }
+
+    #bouquet{
+
+        max-width:90vw;
+
+    }
+
+    .letter{
+
+        padding:25px;
+
+    }
+
+}
